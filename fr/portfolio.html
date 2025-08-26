@@ -30,7 +30,9 @@ lang: fr
             <p class="portfolio-meta">
                 <strong>Client :</strong> {{ project.client }}<br>
                 <strong>Langues :</strong> {{ project.languages }}<br>
-                <strong>Volume :</strong> {{ project.word_count }} mots
+                {% if project.author %}<strong>Auteur :</strong> {{ project.author }}<br>{% endif %}
+                {% if project.illustrator %}<strong>Illustrateur :</strong> {{ project.illustrator }}<br>{% endif %}
+                {% if project.word_count %}<strong>Volume :</strong> {{ project.word_count }} mots{% endif %}
             </p>
             <p class="portfolio-description">{{ project.description }}</p>
             
