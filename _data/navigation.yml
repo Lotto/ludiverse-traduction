@@ -2,17 +2,17 @@
 
 fr:
   - title: "Accueil"
-    url: "/"
+    url: "/fr/"
   - title: "À propos"
-    url: "/a-propos/"
+    url: "/fr/a-propos/"
   - title: "Portfolio"
-    url: "/portfolio/"
+    url: "/fr/portfolio/"
   - title: "Tarifs"
-    url: "/tarifs/"
+    url: "/fr/tarifs/"
   - title: "Blog"
-    url: "/blog/"
+    url: "/fr/blog/"
   - title: "Contact"
-    url: "/contact/"
+    url: "/fr/contact/"
 
 en:
   - title: "Home"

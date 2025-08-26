@@ -2,7 +2,12 @@
     <div class="container">
         <div class="header-wrapper">
             <div class="site-branding">
-                <a href="{{ '/' | relative_url }}" class="site-logo">
+                {% if current_lang == 'fr' %}
+                    {% assign home_url = '/fr/' %}
+                {% else %}
+                    {% assign home_url = '/en/' %}
+                {% endif %}
+                <a href="{{ home_url | relative_url }}" class="site-logo">
                     <h1 class="site-title">Ludiverse Traduction</h1>
                 </a>
                 <p class="site-tagline">{{ site.data.translations[current_lang].tagline }}</p>

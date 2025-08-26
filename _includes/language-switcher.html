@@ -1,11 +1,13 @@
 <div class="language-switcher">
     {% if current_lang == 'fr' %}
-        <a href="/en/" class="lang-link">
+        {% assign en_url = page.url | replace: '/fr/', '/en/' %}
+        <a href="{{ en_url }}" class="lang-link">
             <span class="lang-flag">🇬🇧</span>
             <span class="lang-code">EN</span>
         </a>
     {% else %}
-        <a href="/" class="lang-link">
+        {% assign fr_url = page.url | replace: '/en/', '/fr/' %}
+        <a href="{{ fr_url }}" class="lang-link">
             <span class="lang-flag">🇫🇷</span>
             <span class="lang-code">FR</span>
         </a>

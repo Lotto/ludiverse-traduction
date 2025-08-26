@@ -1,23 +1,23 @@
 ---
 layout: page
-title: Nos Formules & Tarifs
-subtitle: Choisissez la formule adaptée à vos besoins de traduction
-lang: fr
+title: Our Pricing Plans
+subtitle: Choose the plan that fits your translation needs
+lang: en
 ---
 
 <div class="pricing-section">
     <div class="pricing-intro">
         <p class="pricing-description">
-            Nos trois formules de traduction s'adaptent à tous vos projets, du plus simple au plus complexe. 
-            Chaque formule inclut notre expertise en traduction ludique et notre passion pour les jeux de société.
+            Our three translation plans adapt to all your projects, from the simplest to the most complex. 
+            Each plan includes our expertise in game translation and our passion for board games.
         </p>
     </div>
 
     <div class="pricing-cards">
-        {% for plan in site.data.pricing.fr.plans %}
+        {% for plan in site.data.pricing.en.plans %}
         <div class="pricing-card {% if plan.popular %}popular{% endif %}">
             {% if plan.popular %}
-                <div class="popular-badge">Le plus populaire</div>
+                <div class="popular-badge">Most popular</div>
             {% endif %}
             
             <div class="plan-header">
@@ -29,7 +29,7 @@ lang: fr
             </div>
             
             <div class="plan-features">
-                <h4>Ce qui est inclus :</h4>
+                <h4>What's included:</h4>
                 <ul>
                     {% for feature in plan.features %}
                     <li>{{ feature }}</li>
@@ -38,7 +38,7 @@ lang: fr
             </div>
             
             <div class="plan-action">
-                <a href="/contact/" class="btn btn-primary">Choisir cette formule</a>
+                <a href="/en/contact/" class="btn btn-primary">Choose this plan</a>
             </div>
         </div>
         {% endfor %}
@@ -47,72 +47,72 @@ lang: fr
 
 <div class="pricing-details">
     <div class="container">
-        <h2>Détails de nos services</h2>
+        <h2>Service Details</h2>
         
         <div class="services-comparison">
             <table class="comparison-table">
                 <thead>
                     <tr>
                         <th>Service</th>
-                        <th>Classique</th>
+                        <th>Classic</th>
                         <th>Premium</th>
                         <th>Ultimate</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Traduction professionnelle</td>
+                        <td>Professional translation</td>
                         <td class="included">✓</td>
                         <td class="included">✓</td>
                         <td class="included">✓</td>
                     </tr>
                     <tr>
-                        <td>Relecture native</td>
-                        <td class="included">1 relecture</td>
-                        <td class="included">2 relectures</td>
-                        <td class="included">3 relectures</td>
+                        <td>Native proofreading</td>
+                        <td class="included">1 review</td>
+                        <td class="included">2 reviews</td>
+                        <td class="included">3 reviews</td>
                     </tr>
                     <tr>
-                        <td>Délai de livraison</td>
-                        <td class="included">7 jours</td>
-                        <td class="included">5 jours</td>
-                        <td class="included">3 jours</td>
+                        <td>Delivery time</td>
+                        <td class="included">7 days</td>
+                        <td class="included">5 days</td>
+                        <td class="included">3 days</td>
                     </tr>
                     <tr>
-                        <td>Formats acceptés</td>
+                        <td>Accepted formats</td>
                         <td class="limited">Word, PDF</td>
-                        <td class="included">Tous formats</td>
-                        <td class="included">Tous + mise en page</td>
+                        <td class="included">All formats</td>
+                        <td class="included">All + layout</td>
                     </tr>
                     <tr>
-                        <td>Révisions</td>
-                        <td class="limited">3 révisions</td>
-                        <td class="included">Illimitées (30j)</td>
-                        <td class="included">Illimitées (60j)</td>
+                        <td>Revisions</td>
+                        <td class="limited">3 revisions</td>
+                        <td class="included">Unlimited (30d)</td>
+                        <td class="included">Unlimited (60d)</td>
                     </tr>
                     <tr>
                         <td>Support</td>
                         <td class="included">Email</td>
-                        <td class="included">Prioritaire</td>
+                        <td class="included">Priority</td>
                         <td class="included">VIP 24/7</td>
                     </tr>
                     <tr>
-                        <td>Glossaire personnalisé</td>
+                        <td>Custom glossary</td>
                         <td class="not-included">-</td>
                         <td class="included">✓</td>
-                        <td class="included">✓ + guide de style</td>
+                        <td class="included">✓ + style guide</td>
                     </tr>
                     <tr>
-                        <td>Consultation stratégique</td>
+                        <td>Strategic consultation</td>
                         <td class="not-included">-</td>
                         <td class="not-included">-</td>
                         <td class="included">✓</td>
                     </tr>
                     <tr>
-                        <td>Tests de jeu</td>
+                        <td>Playtesting</td>
                         <td class="not-included">-</td>
                         <td class="not-included">-</td>
-                        <td class="included">✓ avec feedback</td>
+                        <td class="included">✓ with feedback</td>
                     </tr>
                 </tbody>
             </table>
@@ -122,37 +122,37 @@ lang: fr
 
 <div class="pricing-faq">
     <div class="container">
-        <h2>Questions fréquentes</h2>
+        <h2>Frequently Asked Questions</h2>
         
         <div class="faq-grid">
             <div class="faq-item">
-                <h3>Comment calculez-vous le nombre de mots ?</h3>
-                <p>Nous comptons tous les mots du texte source, y compris les articles et prépositions. Le décompte se fait sur le document original que vous nous envoyez.</p>
+                <h3>How do you count words?</h3>
+                <p>We count all words in the source text, including articles and prepositions. The count is based on the original document you send us.</p>
             </div>
             
             <div class="faq-item">
-                <h3>Proposez-vous des tarifs dégressifs ?</h3>
-                <p>Oui, pour les projets de plus de 10 000 mots, nous appliquons une remise progressive. Contactez-nous pour un devis personnalisé.</p>
+                <h3>Do you offer volume discounts?</h3>
+                <p>Yes, for projects over 10,000 words, we apply progressive discounts. Contact us for a personalized quote.</p>
             </div>
             
             <div class="faq-item">
-                <h3>Quels formats de fichiers acceptez-vous ?</h3>
-                <p>Word, PDF, Excel, PowerPoint, InDesign, et la plupart des formats courants. Pour les formats spécialisés, contactez-nous.</p>
+                <h3>What file formats do you accept?</h3>
+                <p>Word, PDF, Excel, PowerPoint, InDesign, and most common formats. For specialized formats, please contact us.</p>
             </div>
             
             <div class="faq-item">
-                <h3>Gardez-vous la confidentialité de nos projets ?</h3>
-                <p>Absolument. Nous signons systématiquement un accord de confidentialité (NDA) avant de commencer tout projet.</p>
+                <h3>Do you maintain confidentiality of our projects?</h3>
+                <p>Absolutely. We systematically sign a non-disclosure agreement (NDA) before starting any project.</p>
             </div>
             
             <div class="faq-item">
-                <h3>Puis-je modifier ma commande en cours ?</h3>
-                <p>Oui, dans la limite du raisonnable. Les modifications importantes peuvent affecter le délai et le tarif initial.</p>
+                <h3>Can I modify my order in progress?</h3>
+                <p>Yes, within reason. Major modifications may affect the initial deadline and pricing.</p>
             </div>
             
             <div class="faq-item">
-                <h3>Proposez-vous d'autres langues ?</h3>
-                <p>Principalement français-anglais et anglais-français. Pour d'autres langues, nous travaillons avec un réseau de traducteurs spécialisés.</p>
+                <h3>Do you offer other languages?</h3>
+                <p>Mainly French-English and English-French. For other languages, we work with a network of specialized translators.</p>
             </div>
         </div>
     </div>
@@ -160,9 +160,9 @@ lang: fr
 
 <div class="pricing-cta">
     <div class="container">
-        <h2>Prêt à commencer votre projet ?</h2>
-        <p>Contactez-nous pour discuter de vos besoins et obtenir un devis personnalisé gratuit.</p>
-        <a href="/contact/" class="btn btn-primary">Demander un devis gratuit</a>
+        <h2>Ready to Start Your Project?</h2>
+        <p>Contact us to discuss your needs and get a free personalized quote.</p>
+        <a href="/en/contact/" class="btn btn-primary">Get a free quote</a>
     </div>
 </div>
 
