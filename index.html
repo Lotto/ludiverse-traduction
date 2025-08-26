@@ -1,10 +1,11 @@
 ---
 layout: default
 lang: fr
-redirect_to: /fr/
+title: Ludiverse Traduction
 ---
 
 <script>
+// Redirection immédiate vers /fr/
 window.location.href = '/fr/';
 </script>
 
@@ -12,8 +13,168 @@ window.location.href = '/fr/';
 <meta http-equiv="refresh" content="0; url=/fr/">
 </noscript>
 
-<div style="text-align: center; padding: 50px;">
-    <h1>Redirection...</h1>
-    <p>Vous allez être redirigé vers <a href="/fr/">la page française</a>.</p>
-    <p>Si la redirection ne fonctionne pas, <a href="/fr/">cliquez ici</a>.</p>
-</div>
+<section class="redirect-section">
+    <div class="container">
+        <div class="redirect-content">
+            <div class="logo-section">
+                <h1 class="site-title">Ludiverse Traduction</h1>
+                <p class="site-tagline">Ouvrons votre jeu au monde</p>
+            </div>
+            
+            <div class="redirect-message">
+                <div class="loading-spinner"></div>
+                <h2>Redirection en cours...</h2>
+                <p>Vous allez être redirigé vers notre site en français.</p>
+            </div>
+            
+            <div class="language-choice">
+                <p>Choisissez votre langue / Choose your language :</p>
+                <div class="language-buttons">
+                    <a href="/fr/" class="btn btn-primary">
+                        🇫🇷 Français
+                    </a>
+                    <a href="/en/" class="btn btn-outline">
+                        🇬🇧 English
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.redirect-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2951d5, #1a3ab3);
+    color: white;
+}
+
+.redirect-content {
+    text-align: center;
+    max-width: 500px;
+    padding: 2rem;
+}
+
+.logo-section {
+    margin-bottom: 3rem;
+}
+
+.logo-section .site-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.logo-section .site-tagline {
+    font-size: 1.125rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.redirect-message {
+    margin-bottom: 3rem;
+}
+
+.redirect-message h2 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.redirect-message p {
+    opacity: 0.9;
+    margin: 0;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1.5rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.language-choice p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.language-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.language-buttons .btn {
+    min-width: 120px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.language-buttons .btn-primary {
+    background: white;
+    color: #2951d5;
+    border: 2px solid white;
+}
+
+.language-buttons .btn-primary:hover {
+    background: #f8f9fa;
+    transform: translateY(-2px);
+}
+
+.language-buttons .btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.language-buttons .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .redirect-content {
+        padding: 1rem;
+    }
+    
+    .logo-section .site-title {
+        font-size: 2rem;
+    }
+    
+    .language-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .language-buttons .btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+/* Cache cette section après 2 secondes pour laisser le temps à la redirection */
+@media (min-width: 1px) {
+    .redirect-section {
+        animation: fadeOut 0.5s ease-in-out 2s forwards;
+    }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+</style>
