@@ -7,11 +7,11 @@ email: contact@ludiverse-traduction.fr
 url: "https://ludiverse-traduction.fr"
 baseurl: ""
 
-# Multilingual settings
-languages: ["fr", "en"]
-default_lang: "fr"
-exclude_from_localization: ["assets", "CNAME"]
-parallel_localization: false
+# Multilingual settings disabled
+# languages: ["fr", "en"]
+# default_lang: "fr"
+# exclude_from_localization: ["assets", "CNAME"]
+# parallel_localization: false
 
 # Build settings
 markdown: kramdown
@@ -19,11 +19,11 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
-  - jekyll-paginate
+  # - jekyll-paginate
 
-# Pagination
-paginate: 6
-paginate_path: "/blog/page/:num/"
+# Pagination disabled temporarily
+# paginate: 6
+# paginate_path: "/blog/page/:num/"
 
 # Collections
 collections:

@@ -8,5 +8,5 @@ gem "jekyll-paginate", "~> 1.1"
 gem "webrick", "~> 1.8"
 
 group :jekyll_plugins do
-  gem "jekyll-polyglot", "~> 1.8"
+  # gem "jekyll-polyglot", "~> 1.8" # Disabled - Windows compatibility issues
 end
