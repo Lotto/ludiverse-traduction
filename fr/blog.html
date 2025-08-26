@@ -1,0 +1,260 @@
+---
+layout: page
+title: Blog
+subtitle: Ludiverse Traduction - Où vos jeux parlent à tous
+lang: fr
+---
+
+<section class="blog-intro">
+    <div class="container">
+        <div class="intro-content">
+            <h2>Actualités & Conseils</h2>
+            <p class="lead">Découvrez mes réflexions sur la traduction ludique, les actualités du secteur et mes conseils pour réussir la localisation de vos jeux.</p>
+        </div>
+    </div>
+</section>
+
+<section class="blog-content">
+    <div class="container">
+        <div class="blog-grid">
+            {% assign posts = site.posts | where: "lang", "fr" %}
+            {% for post in posts %}
+            <article class="blog-card">
+                {% if post.image %}
+                <div class="blog-image">
+                    <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" loading="lazy">
+                </div>
+                {% endif %}
+                <div class="blog-body">
+                    <div class="blog-meta">
+                        <span class="blog-date">{{ post.date | date: "%d %B %Y" }}</span>
+                        {% if post.category %}
+                        <span class="blog-category">{{ post.category }}</span>
+                        {% endif %}
+                    </div>
+                    <h3 class="blog-title">
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                    </h3>
+                    <p class="blog-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+                    <a href="{{ post.url | relative_url }}" class="blog-link">Lire la suite →</a>
+                </div>
+            </article>
+            {% endfor %}
+            
+            {% if posts.size == 0 %}
+            <div class="no-posts">
+                <h3>Premiers articles en préparation</h3>
+                <p>Je prépare actuellement mes premiers articles sur la traduction ludique. Revenez bientôt pour découvrir mes conseils et réflexions sur ce domaine passionnant !</p>
+            </div>
+            {% endif %}
+        </div>
+
+        {% if posts.size > 0 %}
+        <div class="blog-pagination">
+            <!-- Pagination sera ajoutée plus tard si nécessaire -->
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<section class="blog-cta">
+    <div class="container">
+        <h2>Vous avez un projet de traduction ?</h2>
+        <p>Parlons de votre jeu et voyons comment je peux vous aider à le faire découvrir dans une nouvelle langue.</p>
+        <div class="cta-actions">
+            <a href="/fr/contact/" class="btn btn-primary">Me contacter</a>
+            <a href="/fr/portfolio/" class="btn btn-outline">Voir mes réalisations</a>
+        </div>
+    </div>
+</section>
+
+<style>
+.blog-intro {
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.intro-content h2 {
+    color: #2951d5;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+}
+
+.lead {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #555;
+}
+
+.blog-content {
+    padding: 5rem 0;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.blog-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+.blog-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover .blog-image img {
+    transform: scale(1.05);
+}
+
+.blog-body {
+    padding: 2rem;
+}
+
+.blog-meta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+}
+
+.blog-date {
+    color: #666;
+}
+
+.blog-category {
+    background: #2951d5;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.blog-title {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.3;
+}
+
+.blog-title a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.blog-title a:hover {
+    color: #2951d5;
+}
+
+.blog-excerpt {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.blog-link {
+    color: #2951d5;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.blog-link:hover {
+    color: darken(#2951d5, 10%);
+}
+
+.no-posts {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+}
+
+.no-posts h3 {
+    color: #2951d5;
+    margin-bottom: 1rem;
+}
+
+.no-posts p {
+    color: #666;
+    font-size: 1.125rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.blog-cta {
+    background: linear-gradient(135deg, #2951d5, #1a3ab3);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.blog-cta h2 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.blog-cta p {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .intro-content h2 {
+        font-size: 2rem;
+    }
+    
+    .blog-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .cta-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>

@@ -8,6 +8,7 @@
                     {% assign home_url = '/en/' %}
                 {% endif %}
                 <a href="{{ home_url | relative_url }}" class="site-logo">
+                    <img src="/assets/images/icons/cropped-logo-3-50x50.png" alt="Ludiverse Traduction" class="site-icon">
                     <h1 class="site-title">Ludiverse Traduction</h1>
                 </a>
                 <p class="site-tagline">{{ site.data.translations[current_lang].tagline }}</p>
@@ -27,6 +28,30 @@
                             </a>
                         </li>
                     {% endfor %}
+                    
+                    <!-- Language switcher for mobile -->
+                    <li class="nav-item mobile-lang-switcher">
+                        <div class="mobile-languages">
+                            {% assign current_url = page.url %}
+                            {% if current_lang == 'fr' %}
+                                {% assign other_lang = 'en' %}
+                                {% assign other_url = current_url | replace: '/fr/', '/en/' %}
+                            {% else %}
+                                {% assign other_lang = 'fr' %}
+                                {% assign other_url = current_url | replace: '/en/', '/fr/' %}
+                            {% endif %}
+                            
+                            <span class="mobile-lang-label">Langue / Language:</span>
+                            <div class="mobile-lang-options">
+                                <a href="/fr{{ current_url | remove: '/fr' | remove: '/en' }}" class="mobile-lang-link {% if current_lang == 'fr' %}active{% endif %}">
+                                    🇫🇷 Français
+                                </a>
+                                <a href="/en{{ current_url | remove: '/fr' | remove: '/en' }}" class="mobile-lang-link {% if current_lang == 'en' %}active{% endif %}">
+                                    🇬🇧 English
+                                </a>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </nav>
             

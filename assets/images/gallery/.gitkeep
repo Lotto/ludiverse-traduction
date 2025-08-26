@@ -1,0 +1,18 @@
+# Gallery Images Directory
+# 
+# This directory is for storing gallery photos including:
+# - Convention and trade show photos
+# - Behind-the-scenes workspace images  
+# - Project translation process photos
+# - Meeting and networking event photos
+#
+# Recommended placeholder files to add:
+# - salon-placeholder.jpg (gaming convention photo)
+# - essen-placeholder.jpg (Essen Spiel convention photo)
+# - work-setup-placeholder.jpg (workspace/desk setup photo)
+# - translation-process-placeholder.jpg (translation work in progress photo)
+#
+# Image guidelines:
+# - Use .jpg format for photos
+# - Optimize images for web (recommended max width: 800px)
+# - Maintain aspect ratio for consistent grid layout

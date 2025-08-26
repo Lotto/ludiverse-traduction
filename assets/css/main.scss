@@ -19,7 +19,7 @@ $font-body: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
 $font-heading: 'DM Serif Display', Georgia, serif;
 
 $container-width: 1200px;
-$mobile-breakpoint: 768px;
+$mobile-breakpoint: 992px;
 $tablet-breakpoint: 992px;
 
 // Reset & Base
@@ -90,9 +90,34 @@ img {
         align-items: center;
         justify-content: space-between;
         padding: 1rem 0;
+        
+        @media (max-width: $mobile-breakpoint) {
+            .header-actions {
+                display: none;
+            }
+            
+            .main-navigation {
+                margin-left: auto;
+            }
+        }
     }
     
     .site-branding {
+        .site-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .site-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+        
         .site-title {
             font-size: 1.5rem;
             margin: 0;
@@ -175,6 +200,56 @@ img {
                     border-bottom-color: $primary-color;
                 }
             }
+            
+            .mobile-lang-switcher {
+                margin-top: 1rem;
+                padding-top: 1rem;
+                border-top: 1px solid $border-color;
+                display: none;
+                
+                @media (max-width: $mobile-breakpoint) {
+                    display: block;
+                }
+                
+                .mobile-lang-label {
+                    display: block;
+                    font-size: 0.875rem;
+                    color: #666;
+                    margin-bottom: 0.5rem;
+                    font-weight: 500;
+                }
+                
+                .mobile-lang-options {
+                    display: flex;
+                    gap: 0.5rem;
+                    flex-wrap: wrap;
+                }
+                
+                .mobile-lang-link {
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: #f8f9fa;
+                    border: 1px solid #e0e0e0;
+                    border-radius: 20px;
+                    color: $text-color;
+                    font-size: 0.875rem;
+                    font-weight: 500;
+                    transition: all 0.3s ease;
+                    text-decoration: none;
+                    
+                    &:hover {
+                        background: $primary-color;
+                        color: white;
+                        border-color: $primary-color;
+                    }
+                    
+                    &.active {
+                        background: $primary-color;
+                        color: white;
+                        border-color: $primary-color;
+                    }
+                }
+            }
         }
     }
     
@@ -187,6 +262,10 @@ img {
 
 // Language Switcher
 .language-switcher {
+    @media (max-width: $mobile-breakpoint) {
+        display: none;
+    }
+    
     .lang-link {
         display: flex;
         align-items: center;

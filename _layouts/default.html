@@ -9,6 +9,10 @@
     
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="50x50" href="{{ '/assets/images/icons/cropped-logo-3-50x50.png' | relative_url }}">
+    <link rel="apple-touch-icon" href="{{ '/assets/images/icons/cropped-logo-3-50x50.png' | relative_url }}">
+    
     {% assign current_lang = page.lang | default: "fr" %}
     
     <!-- Fonts -->

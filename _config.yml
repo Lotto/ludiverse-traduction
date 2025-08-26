@@ -4,8 +4,8 @@ tagline: Ouvrons votre jeu au monde
 description: Services professionnels de traduction pour jeux de société
 author: Ludiverse Traduction
 email: contact@ludiverse-traduction.fr
-url: "https://ludiverse-traduction.fr"
-baseurl: ""
+url: "https://Lotto.github.io"
+baseurl: "/ludiverse-traduction"
 
 # Multilingual settings disabled
 # languages: ["fr", "en"]

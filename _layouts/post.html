@@ -3,42 +3,308 @@ layout: default
 ---
 
 <article class="post">
-    <div class="container">
-        <header class="post-header">
-            <h1 class="post-title">{{ page.title }}</h1>
+    <header class="post-header">
+        <div class="container">
             <div class="post-meta">
-                <time datetime="{{ page.date | date_to_xmlschema }}">
-                    {{ site.data.translations[site.active_lang].posted_on }} {{ page.date | date: "%d/%m/%Y" }}
-                </time>
-                {% if page.author %}
-                    <span class="post-author">
-                        {{ site.data.translations[site.active_lang].by_author }} {{ page.author }}
-                    </span>
+                <span class="post-date">
+                    {% if page.lang == 'fr' %}
+                        {{ page.date | date: "%d %B %Y" }}
+                    {% else %}
+                        {{ page.date | date: "%B %d, %Y" }}
+                    {% endif %}
+                </span>
+                {% if page.category %}
+                <span class="post-category">{{ page.category }}</span>
                 {% endif %}
             </div>
-            {% if page.categories %}
-                <div class="post-categories">
-                    {{ site.data.translations[site.active_lang].categories }}:
-                    {% for category in page.categories %}
-                        <span class="category-tag">{{ category }}</span>
-                    {% endfor %}
-                </div>
+            <h1 class="post-title">{{ page.title }}</h1>
+            {% if page.excerpt %}
+            <p class="post-excerpt">{{ page.excerpt }}</p>
             {% endif %}
-        </header>
-        
-        <div class="post-content">
-            {{ content }}
         </div>
-        
-        {% if page.tags %}
+    </header>
+
+    {% if page.image %}
+    <div class="post-image">
+        <div class="container">
+            <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" loading="lazy">
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="post-content">
+        <div class="container">
+            <div class="post-body">
+                {{ content }}
+            </div>
+            
             <footer class="post-footer">
-                <div class="post-tags">
-                    {{ site.data.translations[site.active_lang].tags }}:
-                    {% for tag in page.tags %}
-                        <span class="tag">#{{ tag }}</span>
+                <div class="post-navigation">
+                    {% assign posts = site.posts | where: "lang", page.lang %}
+                    {% for post in posts %}
+                        {% if post.url == page.url %}
+                            {% assign current_index = forloop.index %}
+                            {% break %}
+                        {% endif %}
                     {% endfor %}
+                    
+                    {% assign prev_post = posts[current_index] %}
+                    {% assign next_post = posts[current_index-2] %}
+                    
+                    {% if prev_post %}
+                    <div class="nav-previous">
+                        <span class="nav-label">
+                            {% if page.lang == 'fr' %}Article précédent{% else %}Previous post{% endif %}
+                        </span>
+                        <a href="{{ prev_post.url | relative_url }}" class="nav-link">{{ prev_post.title }}</a>
+                    </div>
+                    {% endif %}
+                    
+                    {% if next_post %}
+                    <div class="nav-next">
+                        <span class="nav-label">
+                            {% if page.lang == 'fr' %}Article suivant{% else %}Next post{% endif %}
+                        </span>
+                        <a href="{{ next_post.url | relative_url }}" class="nav-link">{{ next_post.title }}</a>
+                    </div>
+                    {% endif %}
+                </div>
+                
+                <div class="post-cta">
+                    <h3>
+                        {% if page.lang == 'fr' %}
+                            Intéressé par mes services de traduction ?
+                        {% else %}
+                            Interested in my translation services?
+                        {% endif %}
+                    </h3>
+                    <p>
+                        {% if page.lang == 'fr' %}
+                            Contactez-moi pour discuter de votre projet de localisation.
+                        {% else %}
+                            Contact me to discuss your localization project.
+                        {% endif %}
+                    </p>
+                    <a href="{% if page.lang == 'fr' %}/fr/contact/{% else %}/en/contact/{% endif %}" class="btn btn-primary">
+                        {% if page.lang == 'fr' %}Me contacter{% else %}Contact me{% endif %}
+                    </a>
+                </div>
+                
+                <div class="back-to-blog">
+                    <a href="{% if page.lang == 'fr' %}/fr/blog/{% else %}/en/blog/{% endif %}" class="blog-return-link">
+                        ← {% if page.lang == 'fr' %}Retour au blog{% else %}Back to blog{% endif %}
+                    </a>
                 </div>
             </footer>
-        {% endif %}
+        </div>
     </div>
 </article>
+
+<style>
+.post {
+    margin-bottom: 4rem;
+}
+
+.post-header {
+    background: linear-gradient(135deg, #2951d5, #1a3ab3);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.post-meta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+}
+
+.post-date {
+    opacity: 0.9;
+}
+
+.post-category {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.post-title {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.post-excerpt {
+    font-size: 1.125rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.post-image {
+    margin-bottom: 3rem;
+}
+
+.post-image img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.post-content {
+    padding: 2rem 0;
+}
+
+.post-body {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.125rem;
+    line-height: 1.7;
+}
+
+.post-body h2 {
+    color: #2951d5;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.post-body h3 {
+    color: #333;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.post-body p {
+    margin-bottom: 1.5rem;
+}
+
+.post-body ul, .post-body ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+
+.post-body blockquote {
+    border-left: 4px solid #2951d5;
+    padding-left: 2rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: #666;
+    background: #f8f9fa;
+    padding: 1.5rem 2rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.post-footer {
+    max-width: 800px;
+    margin: 3rem auto 0;
+    padding-top: 2rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.post-navigation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.nav-previous,
+.nav-next {
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.nav-next {
+    text-align: right;
+}
+
+.nav-label {
+    display: block;
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.nav-link {
+    color: #2951d5;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #1a3ab3;
+}
+
+.post-cta {
+    background: linear-gradient(135deg, #2951d5, #1a3ab3);
+    color: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.post-cta h3 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.post-cta p {
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.back-to-blog {
+    text-align: center;
+}
+
+.blog-return-link {
+    color: #2951d5;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.blog-return-link:hover {
+    color: #1a3ab3;
+}
+
+@media (max-width: 768px) {
+    .post-title {
+        font-size: 2rem;
+    }
+    
+    .post-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .post-body {
+        font-size: 1rem;
+    }
+    
+    .post-navigation {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-next {
+        text-align: left;
+    }
+    
+    .post-cta {
+        padding: 2rem 1.5rem;
+    }
+}
+</style>

@@ -1,0 +1,12 @@
+# Blog Images Directory
+# 
+# This directory is for storing blog post featured images including:
+# - translation-challenges.jpg (article about translation challenges)
+# - essen-spiel-2024.jpg (Essen Spiel convention recap photo)
+# - publisher-advice.jpg (advice for publishers article image)
+#
+# Image guidelines:
+# - Use .jpg format for photos
+# - Recommended size: 800x400px (2:1 aspect ratio)
+# - Optimize images for web (keep file size under 150kb)
+# - Use descriptive filenames matching blog post topics

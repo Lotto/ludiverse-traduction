@@ -8,9 +8,13 @@ lang: en
 <section class="about-intro">
     <div class="container">
         <div class="about-content">
-            <div class="about-text">
-                <h2>Welcome to Ludiverse Traduction</h2>
-                <p class="intro-text">I am <strong>Adil ET TAHER</strong>: an independent board game translator and English teacher with 20 years of experience. Passionate about board games and language studies, I put my expertise and passion at the service of your games and projects.</p>
+            <div class="about-profile">
+                <div class="profile-image">
+                    <img src="/assets/images/adil-vertical-714x1024.png" alt="Adil Et Taher" class="adil-photo">
+                </div>
+                <div class="about-text">
+                    <h2>Welcome to Ludiverse Traduction</h2>
+                    <p class="intro-text">I am <strong>Adil ET TAHER</strong>: an independent board game translator and English teacher with 20 years of experience. Passionate about board games and language studies, I put my expertise and passion at the service of your games and projects.</p>
                 
                 <p>Whether you are a game publisher seeking localization, or a creator eager to see your game reach new audiences, I'm here to help you break down linguistic and cultural barriers.</p>
                 
@@ -19,6 +23,7 @@ lang: en
                 <div class="cta-text">
                     <p><strong>Contact me today to learn more about how I can open your game to the world.</strong></p>
                     <a href="/en/contact/" class="btn btn-primary">Let's discuss your project</a>
+                </div>
                 </div>
             </div>
         </div>
@@ -72,10 +77,29 @@ lang: en
     background: linear-gradient(135deg, #f8f9fa, #ffffff);
 }
 
-.about-text {
-    max-width: 800px;
+.about-profile {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    align-items: center;
+    max-width: 1000px;
     margin: 0 auto;
+}
+
+.profile-image {
     text-align: center;
+}
+
+.adil-photo {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.about-text {
+    text-align: left;
 }
 
 .intro-text {
@@ -120,7 +144,7 @@ lang: en
 
 .methodology-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -173,12 +197,23 @@ lang: en
 }
 
 @media (max-width: 768px) {
-    .methodology-grid {
+    .about-profile {
         grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
     }
     
     .about-text {
+        text-align: center;
         padding: 0 1rem;
+    }
+    
+    .adil-photo {
+        max-width: 250px;
+    }
+    
+    .methodology-grid {
+        grid-template-columns: 1fr;
     }
     
     .intro-text {
