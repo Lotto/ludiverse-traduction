@@ -349,9 +349,12 @@ img {
     &-primary {
         background: $primary-color;
         color: #fff;
+        border: 2px solid $primary-color;
         
         &:hover {
-            background: darken($primary-color, 10%);
+            background: #fff;
+            color: $primary-color;
+            border-color: $primary-color;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba($primary-color, 0.3);
         }
@@ -360,9 +363,13 @@ img {
     &-secondary {
         background: $secondary-color;
         color: #fff;
+        border: 2px solid $secondary-color;
         
         &:hover {
-            background: darken($secondary-color, 10%);
+            background: #fff;
+            color: $secondary-color;
+            border-color: $secondary-color;
+            transform: translateY(-2px);
         }
     }
     
@@ -372,8 +379,23 @@ img {
         color: $primary-color;
         
         &:hover {
-            background: $primary-color;
-            color: #fff;
+            background: #fff;
+            color: $primary-color;
+            border-color: $primary-color;
+            transform: translateY(-2px);
+        }
+    }
+    
+    &-outline-white {
+        background: transparent;
+        border: 2px solid #fff;
+        color: #fff;
+        
+        &:hover {
+            background: #fff;
+            color: $primary-color;
+            border-color: #fff;
+            transform: translateY(-2px);
         }
     }
 }

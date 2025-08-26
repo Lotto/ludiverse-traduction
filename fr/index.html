@@ -7,11 +7,11 @@ lang: fr
 <section class="hero">
     <div class="container">
         <div class="hero-content">
-            <h1 class="hero-title">Traduction professionnelle pour vos jeux de société</h1>
-            <p class="hero-subtitle">Ouvrez votre jeu au monde avec Ludiverse Traduction. Expertise, passion et précision au service de vos créations ludiques.</p>
+            <h1 class="hero-title">J'ouvre votre jeu au monde</h1>
+            <p class="hero-subtitle">Traduction professionnelle pour jeux de société. Mon expertise, ma passion et ma précision au service de vos créations ludiques.</p>
             <div class="hero-actions">
-                <a href="/fr/tarifs/" class="btn btn-primary">Découvrir nos formules</a>
-                <a href="/fr/portfolio/" class="btn btn-outline">Voir nos réalisations</a>
+                <a href="/fr/tarifs/" class="btn btn-primary">Découvrir mes formules</a>
+                <a href="/fr/portfolio/" class="btn btn-outline-white">Voir mes réalisations</a>
             </div>
         </div>
     </div>
@@ -20,7 +20,7 @@ lang: fr
 <!-- Services Section -->
 <section class="services">
     <div class="container">
-        <h2 class="section-title">Nos services de traduction ludique</h2>
+        <h2 class="section-title">Mes services de traduction ludique</h2>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">📋</div>
@@ -44,7 +44,7 @@ lang: fr
 <!-- Pricing Preview -->
 <section class="pricing-preview">
     <div class="container">
-        <h2 class="section-title">Nos formules adaptées à vos besoins</h2>
+        <h2 class="section-title">Mes formules adaptées à vos besoins</h2>
         <div class="pricing-cards">
             {% for plan in site.data.pricing.fr.plans %}
             <div class="pricing-card {% if plan.popular %}popular{% endif %}">
@@ -71,10 +71,10 @@ lang: fr
 <!-- Portfolio Preview -->
 <section class="portfolio-preview">
     <div class="container">
-        <h2 class="section-title">Nos dernières réalisations</h2>
+        <h2 class="section-title">Mes dernières réalisations</h2>
         <div class="portfolio-grid">
             <div class="portfolio-item">
-                <img src="/assets/images/portfolio/mojo.jpg" alt="Traduction Mojo" class="portfolio-image">
+                <img src="/assets/images/portfolio/Mojo_3DBox_With_Material.png" alt="Traduction Mojo" class="portfolio-image">
                 <div class="portfolio-overlay">
                     <h4>Mojo</h4>
                     <p>Français → Anglais</p>
@@ -82,7 +82,7 @@ lang: fr
                 </div>
             </div>
             <div class="portfolio-item">
-                <img src="/assets/images/portfolio/khiva.jpg" alt="Traduction Khiva" class="portfolio-image">
+                <img src="/assets/images/portfolio/Khiva-3D_Droite-1003x1024.png" alt="Traduction Khiva" class="portfolio-image">
                 <div class="portfolio-overlay">
                     <h4>Khiva</h4>
                     <p>Français → Anglais</p>
@@ -91,7 +91,7 @@ lang: fr
             </div>
         </div>
         <div class="text-center">
-            <a href="/fr/portfolio/" class="btn btn-primary">Voir tout le portfolio</a>
+            <a href="/fr/portfolio/" class="btn btn-outline-white">Voir mes réalisations</a>
         </div>
     </div>
 </section>
@@ -99,27 +99,16 @@ lang: fr
 <!-- Testimonials -->
 <section class="testimonials">
     <div class="container">
-        <h2 class="section-title">Ce que nos clients disent</h2>
+        <h2 class="section-title">Ils m'ont fait confiance</h2>
         <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <p class="testimonial-text">"Une traduction impeccable qui respecte parfaitement l'esprit du jeu. Le professionnalisme de Ludiverse est remarquable."</p>
-                <div class="testimonial-author">
-                    <strong>Marie Dupont</strong>
-                    <span>Éditrice chez GameCo</span>
+            <div class="testimonial-card featured-testimonial">
+                <div class="testimonial-avatar">
+                    <img src="/assets/images/testimonials/david-perez-150x150.jpeg" alt="David Perez" class="avatar-img">
                 </div>
-            </div>
-            <div class="testimonial-card">
-                <p class="testimonial-text">"Délais respectés, qualité au rendez-vous. Ludiverse comprend vraiment les enjeux de la localisation ludique."</p>
+                <p class="testimonial-text">"J'ai commencé à travailler avec Ludiverse pour la traduction de nos jeux il y a plus d'un an. Depuis, la collaboration est fluide et très constructive. Adil est à l'écoute de ses clients et n'hésite pas à apporter son expérience de joueur, que cela touche à la traduction mais également à l'ensemble des règles. Un vrai plus prodigué par un vrai professionnel que je recommande, sans restriction."</p>
                 <div class="testimonial-author">
-                    <strong>Thomas Martin</strong>
-                    <span>Créateur indépendant</span>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <p class="testimonial-text">"La formule Premium est parfaite pour nos besoins. Les révisions illimitées nous ont permis d'affiner chaque détail."</p>
-                <div class="testimonial-author">
-                    <strong>Sophie Bernard</strong>
-                    <span>Studio Ludik</span>
+                    <strong>David Perez</strong>
+                    <span>The Flying Games</span>
                 </div>
             </div>
         </div>
@@ -130,7 +119,7 @@ lang: fr
 <section class="cta">
     <div class="container">
         <h2>Prêt à traduire votre jeu ?</h2>
-        <p>Contactez-nous pour discuter de votre projet et obtenir un devis personnalisé.</p>
+        <p>Contactez-moi pour discuter de votre projet et obtenir un devis personnalisé.</p>
         <a href="/fr/contact/" class="btn btn-primary">Demander un devis gratuit</a>
     </div>
 </section>
@@ -286,7 +275,7 @@ lang: fr
 .portfolio-image {
     width: 100%;
     height: 250px;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.3s ease;
 }
 
@@ -352,6 +341,26 @@ lang: fr
     color: #666;
     font-size: 0.875rem;
 }
+
+.featured-testimonial {
+    grid-column: 1 / -1;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.testimonial-avatar {
+    margin-bottom: 1.5rem;
+}
+
+.avatar-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #2951d5;
+}
+
 
 .cta {
     background: linear-gradient(135deg, #2951d5, #1a3ab3);
