@@ -1,0 +1,73 @@
+# Site settings
+title: Ludiverse Traduction
+tagline: Ouvrons votre jeu au monde
+description: Services professionnels de traduction pour jeux de société
+author: Ludiverse Traduction
+email: contact@ludiverse-traduction.fr
+url: "https://ludiverse-traduction.fr"
+baseurl: ""
+
+# Multilingual settings
+languages: ["fr", "en"]
+default_lang: "fr"
+exclude_from_localization: ["assets", "CNAME"]
+parallel_localization: false
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate
+
+# Pagination
+paginate: 6
+paginate_path: "/blog/page/:num/"
+
+# Collections
+collections:
+  portfolio:
+    output: true
+    permalink: /:lang/portfolio/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "portfolio"
+    values:
+      layout: "portfolio-item"
+
+# Exclude files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - package.json
+  - package-lock.json
+  - README.md
+  - CLAUDE.md
+
+# Compress HTML
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blanklines: false
+  profile: false

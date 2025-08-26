@@ -1,0 +1,396 @@
+---
+layout: default
+lang: en
+---
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">Professional Translation for Your Board Games</h1>
+            <p class="hero-subtitle">Open your game to the world with Ludiverse Translation. Expertise, passion and precision at the service of your gaming creations.</p>
+            <div class="hero-actions">
+                <a href="/en/pricing/" class="btn btn-primary">Discover our plans</a>
+                <a href="/en/portfolio/" class="btn btn-outline">View our work</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="services">
+    <div class="container">
+        <h2 class="section-title">Our Game Translation Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">📋</div>
+                <h3>Game Rules</h3>
+                <p>Clear and precise translation of your rules, adapted to the target audience for optimal understanding.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <h3>Game Components</h3>
+                <p>Cards, boards, tiles... Every element translated with consistency and respect for gameplay.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📚</div>
+                <h3>Documentation</h3>
+                <p>Strategy guides, FAQs, marketing materials to support your game internationally.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Preview -->
+<section class="pricing-preview">
+    <div class="container">
+        <h2 class="section-title">Plans Tailored to Your Needs</h2>
+        <div class="pricing-cards">
+            {% for plan in site.data.pricing.en.plans %}
+            <div class="pricing-card {% if plan.popular %}popular{% endif %}">
+                {% if plan.popular %}
+                <div class="popular-badge">Most popular</div>
+                {% endif %}
+                <h3 class="plan-name">{{ plan.name }}</h3>
+                <div class="plan-price">
+                    <span class="price">{{ plan.price }}</span>
+                    <span class="unit">{{ plan.unit }}</span>
+                </div>
+                <ul class="plan-features">
+                    {% for feature in plan.features limit:3 %}
+                    <li>{{ feature }}</li>
+                    {% endfor %}
+                </ul>
+                <a href="/en/pricing/" class="btn btn-primary">Learn more</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio Preview -->
+<section class="portfolio-preview">
+    <div class="container">
+        <h2 class="section-title">Our Latest Projects</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="/assets/images/portfolio/game1.jpg" alt="Game translation 1" class="portfolio-image">
+                <div class="portfolio-overlay">
+                    <h4>Ticket to Ride</h4>
+                    <p>French → English</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="/assets/images/portfolio/game2.jpg" alt="Game translation 2" class="portfolio-image">
+                <div class="portfolio-overlay">
+                    <h4>Catan Universe</h4>
+                    <p>English → French</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="/assets/images/portfolio/game3.jpg" alt="Game translation 3" class="portfolio-image">
+                <div class="portfolio-overlay">
+                    <h4>Wingspan</h4>
+                    <p>English → French</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="/en/portfolio/" class="btn btn-primary">View full portfolio</a>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+    <div class="container">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Impeccable translation that perfectly respects the spirit of the game. Ludiverse's professionalism is remarkable."</p>
+                <div class="testimonial-author">
+                    <strong>Marie Dupont</strong>
+                    <span>Publisher at GameCo</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Deadlines met, quality delivered. Ludiverse truly understands the challenges of game localization."</p>
+                <div class="testimonial-author">
+                    <strong>Thomas Martin</strong>
+                    <span>Independent Creator</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"The Premium plan is perfect for our needs. Unlimited revisions allowed us to refine every detail."</p>
+                <div class="testimonial-author">
+                    <strong>Sophie Bernard</strong>
+                    <span>Studio Ludik</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+    <div class="container">
+        <h2>Ready to Translate Your Game?</h2>
+        <p>Contact us to discuss your project and get a personalized quote.</p>
+        <a href="/en/contact/" class="btn btn-primary">Get a free quote</a>
+    </div>
+</section>
+
+<style>
+.hero {
+    background: linear-gradient(135deg, #2951d5, #1a3ab3);
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.services {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.pricing-preview {
+    padding: 4rem 0;
+}
+
+.pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.pricing-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.pricing-card.popular {
+    border-color: #2951d5;
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(41, 81, 213, 0.2);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2951d5;
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.plan-name {
+    margin-bottom: 1rem;
+}
+
+.plan-price {
+    margin-bottom: 1.5rem;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2951d5;
+}
+
+.unit {
+    color: #666;
+}
+
+.plan-features {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.plan-features li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.portfolio-preview {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.portfolio-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-image {
+    transform: scale(1.1);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: 1.5rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    transform: translateY(0);
+}
+
+.portfolio-overlay h4 {
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.portfolio-overlay p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+.testimonials {
+    padding: 4rem 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.testimonial-author strong {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.testimonial-author span {
+    color: #666;
+    font-size: 0.875rem;
+}
+
+.cta {
+    background: linear-gradient(135deg, #2951d5, #1a3ab3);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.cta h2 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.cta p {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.text-center {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .pricing-card.popular {
+        transform: none;
+    }
+}
+</style>

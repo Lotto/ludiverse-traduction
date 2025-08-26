@@ -1,0 +1,93 @@
+# Données des formules tarifaires
+
+fr:
+  title: "Nos formules"
+  subtitle: "Choisissez la formule adaptée à vos besoins"
+  plans:
+    - name: "Classique"
+      price: "0,08€"
+      unit: "par mot"
+      color: "primary"
+      features:
+        - "Traduction professionnelle"
+        - "Relecture par un natif"
+        - "Livraison sous 7 jours"
+        - "Format Word ou PDF"
+        - "Support par email"
+      popular: false
+      
+    - name: "Premium"
+      price: "0,12€"
+      unit: "par mot"
+      color: "success"
+      features:
+        - "Traduction professionnelle"
+        - "Double relecture native"
+        - "Livraison sous 5 jours"
+        - "Tous formats acceptés"
+        - "Révisions illimitées (30 jours)"
+        - "Support prioritaire"
+        - "Glossaire personnalisé"
+      popular: true
+      
+    - name: "Ultimate"
+      price: "0,18€"
+      unit: "par mot"
+      color: "danger"
+      features:
+        - "Traduction professionnelle"
+        - "Triple relecture avec expert ludique"
+        - "Livraison express sous 3 jours"
+        - "Tous formats + mise en page"
+        - "Révisions illimitées (60 jours)"
+        - "Support VIP 24/7"
+        - "Glossaire et guide de style"
+        - "Consultation stratégique incluse"
+        - "Tests de jeu avec feedback"
+      popular: false
+
+en:
+  title: "Our Pricing Plans"
+  subtitle: "Choose the plan that fits your needs"
+  plans:
+    - name: "Classic"
+      price: "€0.08"
+      unit: "per word"
+      color: "primary"
+      features:
+        - "Professional translation"
+        - "Native proofreading"
+        - "7-day delivery"
+        - "Word or PDF format"
+        - "Email support"
+      popular: false
+      
+    - name: "Premium"
+      price: "€0.12"
+      unit: "per word"
+      color: "success"
+      features:
+        - "Professional translation"
+        - "Double native proofreading"
+        - "5-day delivery"
+        - "All formats accepted"
+        - "Unlimited revisions (30 days)"
+        - "Priority support"
+        - "Custom glossary"
+      popular: true
+      
+    - name: "Ultimate"
+      price: "€0.18"
+      unit: "per word"
+      color: "danger"
+      features:
+        - "Professional translation"
+        - "Triple review with game expert"
+        - "3-day express delivery"
+        - "All formats + layout"
+        - "Unlimited revisions (60 days)"
+        - "24/7 VIP support"
+        - "Glossary and style guide"
+        - "Strategic consultation included"
+        - "Playtesting with feedback"
+      popular: false

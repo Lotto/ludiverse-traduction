@@ -1,0 +1,292 @@
+---
+layout: page
+title: Notre Portfolio
+subtitle: Découvrez les jeux que nous avons traduits avec passion et expertise
+lang: fr
+---
+
+<div class="portfolio-filters">
+    <button class="filter-btn active" data-filter="all">Tous</button>
+    {% for category in site.data.portfolio.fr.categories %}
+        {% unless category.slug == 'all' %}
+            <button class="filter-btn" data-filter="{{ category.slug }}">{{ category.name }}</button>
+        {% endunless %}
+    {% endfor %}
+</div>
+
+<div class="portfolio-grid">
+    {% for project in site.data.portfolio.fr.projects %}
+    <div class="portfolio-card" data-category="{{ project.category }}">
+        <div class="portfolio-image">
+            <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" loading="lazy">
+            <div class="portfolio-overlay">
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.client }}</p>
+                <p class="languages">{{ project.languages }}</p>
+            </div>
+        </div>
+        <div class="portfolio-content">
+            <h4>{{ project.title }}</h4>
+            <p class="portfolio-meta">
+                <strong>Client :</strong> {{ project.client }}<br>
+                <strong>Langues :</strong> {{ project.languages }}<br>
+                <strong>Volume :</strong> {{ project.word_count }} mots
+            </p>
+            <p class="portfolio-description">{{ project.description }}</p>
+            
+            {% if project.services %}
+            <div class="portfolio-services">
+                <h5>Services fournis :</h5>
+                <ul>
+                    {% for service in project.services %}
+                    <li>{{ service }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            
+            {% if project.testimonial %}
+            <blockquote class="portfolio-testimonial">
+                "{{ project.testimonial }}"
+            </blockquote>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="portfolio-cta">
+    <h2>Votre projet de traduction</h2>
+    <p>Vous avez un jeu à traduire ? Discutons de votre projet !</p>
+    <a href="/contact/" class="btn btn-primary">Demander un devis</a>
+</div>
+
+<style>
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: #f8f9fa;
+    border: 2px solid #e0e0e0;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #2951d5;
+    border-color: #2951d5;
+    color: white;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.portfolio-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover .portfolio-image img {
+    transform: scale(1.05);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 2rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover .portfolio-overlay {
+    transform: translateY(0);
+}
+
+.portfolio-overlay h3 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.portfolio-overlay p {
+    margin: 0.25rem 0;
+    opacity: 0.9;
+}
+
+.languages {
+    font-size: 0.875rem;
+    font-style: italic;
+}
+
+.portfolio-content {
+    padding: 2rem;
+}
+
+.portfolio-content h4 {
+    color: #2951d5;
+    margin-bottom: 1rem;
+}
+
+.portfolio-meta {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.portfolio-description {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.portfolio-services {
+    margin-bottom: 1.5rem;
+}
+
+.portfolio-services h5 {
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-size: 1rem;
+}
+
+.portfolio-services ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.portfolio-services li {
+    padding: 0.25rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.portfolio-services li:before {
+    content: "✓";
+    color: #4caf50;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.portfolio-testimonial {
+    background: #f8f9fa;
+    border-left: 4px solid #2951d5;
+    padding: 1rem;
+    margin: 0;
+    font-style: italic;
+    border-radius: 0 4px 4px 0;
+}
+
+.portfolio-cta {
+    background: linear-gradient(135deg, #2951d5, #1a3ab3);
+    color: white;
+    padding: 3rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.portfolio-cta h2 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.portfolio-cta p {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .portfolio-filters {
+        gap: 0.5rem;
+    }
+    
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* Animation pour le filtrage */
+.portfolio-card {
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.portfolio-card.filtered {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const filter = this.getAttribute('data-filter');
+            
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filter cards
+            portfolioCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (filter === 'all' || category === filter) {
+                    card.classList.remove('filtered');
+                } else {
+                    card.classList.add('filtered');
+                }
+            });
+        });
+    });
+});
+</script>

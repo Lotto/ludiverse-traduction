@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<article class="post">
+    <div class="container">
+        <header class="post-header">
+            <h1 class="post-title">{{ page.title }}</h1>
+            <div class="post-meta">
+                <time datetime="{{ page.date | date_to_xmlschema }}">
+                    {{ site.data.translations[site.active_lang].posted_on }} {{ page.date | date: "%d/%m/%Y" }}
+                </time>
+                {% if page.author %}
+                    <span class="post-author">
+                        {{ site.data.translations[site.active_lang].by_author }} {{ page.author }}
+                    </span>
+                {% endif %}
+            </div>
+            {% if page.categories %}
+                <div class="post-categories">
+                    {{ site.data.translations[site.active_lang].categories }}:
+                    {% for category in page.categories %}
+                        <span class="category-tag">{{ category }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </header>
+        
+        <div class="post-content">
+            {{ content }}
+        </div>
+        
+        {% if page.tags %}
+            <footer class="post-footer">
+                <div class="post-tags">
+                    {{ site.data.translations[site.active_lang].tags }}:
+                    {% for tag in page.tags %}
+                        <span class="tag">#{{ tag }}</span>
+                    {% endfor %}
+                </div>
+            </footer>
+        {% endif %}
+    </div>
+</article>

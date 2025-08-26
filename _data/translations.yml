@@ -1,0 +1,115 @@
+# Traductions pour l'interface utilisateur
+
+fr:
+  # Navigation
+  home: "Accueil"
+  about: "À propos"
+  portfolio: "Portfolio"
+  pricing: "Tarifs"
+  blog: "Blog"
+  contact: "Contact"
+  
+  # Header
+  tagline: "Ouvrons votre jeu au monde"
+  
+  # Footer
+  footer_text: "© 2024 Ludiverse Traduction. Tous droits réservés."
+  follow_us: "Suivez-nous"
+  quick_links: "Liens rapides"
+  contact_info: "Contact"
+  
+  # Buttons
+  learn_more: "En savoir plus"
+  view_portfolio: "Voir le portfolio"
+  get_quote: "Demander un devis"
+  send_message: "Envoyer le message"
+  view_details: "Voir les détails"
+  
+  # Forms
+  your_name: "Votre nom"
+  your_email: "Votre email"
+  subject: "Sujet"
+  message: "Message"
+  phone: "Téléphone"
+  company: "Entreprise"
+  
+  # Pricing
+  per_word: "par mot"
+  from: "À partir de"
+  most_popular: "Le plus populaire"
+  choose_plan: "Choisir cette formule"
+  
+  # Portfolio
+  all_projects: "Tous les projets"
+  filter_by: "Filtrer par"
+  board_games: "Jeux de plateau"
+  card_games: "Jeux de cartes"
+  role_playing: "Jeux de rôle"
+  
+  # Blog
+  read_more: "Lire la suite"
+  posted_on: "Publié le"
+  by_author: "par"
+  categories: "Catégories"
+  tags: "Tags"
+  
+  # 404
+  page_not_found: "Page non trouvée"
+  back_to_home: "Retour à l'accueil"
+
+en:
+  # Navigation
+  home: "Home"
+  about: "About"
+  portfolio: "Portfolio"
+  pricing: "Pricing"
+  blog: "Blog"
+  contact: "Contact"
+  
+  # Header
+  tagline: "Let's open your game to the world"
+  
+  # Footer
+  footer_text: "© 2024 Ludiverse Translation. All rights reserved."
+  follow_us: "Follow us"
+  quick_links: "Quick Links"
+  contact_info: "Contact"
+  
+  # Buttons
+  learn_more: "Learn more"
+  view_portfolio: "View portfolio"
+  get_quote: "Get a quote"
+  send_message: "Send message"
+  view_details: "View details"
+  
+  # Forms
+  your_name: "Your name"
+  your_email: "Your email"
+  subject: "Subject"
+  message: "Message"
+  phone: "Phone"
+  company: "Company"
+  
+  # Pricing
+  per_word: "per word"
+  from: "From"
+  most_popular: "Most popular"
+  choose_plan: "Choose this plan"
+  
+  # Portfolio
+  all_projects: "All projects"
+  filter_by: "Filter by"
+  board_games: "Board games"
+  card_games: "Card games"
+  role_playing: "Role-playing games"
+  
+  # Blog
+  read_more: "Read more"
+  posted_on: "Posted on"
+  by_author: "by"
+  categories: "Categories"
+  tags: "Tags"
+  
+  # 404
+  page_not_found: "Page not found"
+  back_to_home: "Back to home"

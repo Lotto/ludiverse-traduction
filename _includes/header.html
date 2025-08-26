@@ -1,0 +1,33 @@
+<header class="site-header">
+    <div class="container">
+        <div class="header-wrapper">
+            <div class="site-branding">
+                <a href="{{ '/' | relative_url }}" class="site-logo">
+                    <h1 class="site-title">Ludiverse Traduction</h1>
+                </a>
+                <p class="site-tagline">{{ site.data.translations[current_lang].tagline }}</p>
+            </div>
+            
+            <nav class="main-navigation">
+                <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                
+                <ul class="nav-menu">
+                    {% for item in site.data.navigation[current_lang] %}
+                        <li class="nav-item">
+                            <a href="{{ item.url | relative_url }}" 
+                               class="nav-link {% if page.url == item.url %}active{% endif %}">
+                                {{ item.title }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                {% include language-switcher.html %}
+            </div>
+        </div>
+    </div>
+</header>

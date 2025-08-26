@@ -1,0 +1,29 @@
+# Navigation principale
+
+fr:
+  - title: "Accueil"
+    url: "/"
+  - title: "À propos"
+    url: "/a-propos/"
+  - title: "Portfolio"
+    url: "/portfolio/"
+  - title: "Tarifs"
+    url: "/tarifs/"
+  - title: "Blog"
+    url: "/blog/"
+  - title: "Contact"
+    url: "/contact/"
+
+en:
+  - title: "Home"
+    url: "/en/"
+  - title: "About"
+    url: "/en/about/"
+  - title: "Portfolio"
+    url: "/en/portfolio/"
+  - title: "Pricing"
+    url: "/en/pricing/"
+  - title: "Blog"
+    url: "/en/blog/"
+  - title: "Contact"
+    url: "/en/contact/"

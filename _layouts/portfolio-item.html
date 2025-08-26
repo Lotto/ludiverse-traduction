@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+<div class="portfolio-item">
+    <div class="container">
+        <header class="portfolio-header">
+            <h1 class="portfolio-title">{{ page.title }}</h1>
+            {% if page.client %}
+                <p class="portfolio-client">Client: {{ page.client }}</p>
+            {% endif %}
+        </header>
+        
+        <div class="portfolio-content">
+            <div class="portfolio-image">
+                {% if page.image %}
+                    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+                {% endif %}
+            </div>
+            
+            <div class="portfolio-details">
+                {{ content }}
+                
+                {% if page.services %}
+                    <div class="portfolio-services">
+                        <h3>Services fournis</h3>
+                        <ul>
+                            {% for service in page.services %}
+                                <li>{{ service }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+                
+                {% if page.languages %}
+                    <div class="portfolio-languages">
+                        <h3>Langues</h3>
+                        <p>{{ page.languages }}</p>
+                    </div>
+                {% endif %}
+                
+                {% if page.word_count %}
+                    <div class="portfolio-wordcount">
+                        <h3>Volume</h3>
+                        <p>{{ page.word_count }} mots</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
