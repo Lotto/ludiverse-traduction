@@ -3,8 +3,6 @@ name: Deploy Jekyll site to Pages
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 permissions:
   contents: read
@@ -29,12 +27,11 @@ jobs:
         ruby-version: '3.2'
         bundler-cache: true
 
-    - name: Setup Pages
-      id: pages
-      uses: actions/configure-pages@v4
+    - name: Install dependencies
+      run: bundle install
 
     - name: Build with Jekyll
-      run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+      run: bundle exec jekyll build --baseurl "/ludiverse-traduction"
       env:
         JEKYLL_ENV: production
 
