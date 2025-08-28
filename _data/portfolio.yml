@@ -15,6 +15,7 @@ fr:
   
   projects:
     - title: "Mojo"
+      id: "mojo"
       client: "The Flying Games"
       category: "board-games"
       image: "/assets/images/portfolio/Mojo_3DBox_With_Material.png"
@@ -29,6 +30,7 @@ fr:
       testimonial: "Une collaboration fluide qui a permis d'ouvrir Mojo au marché anglophone avec succès."
       
     - title: "Khiva"
+      id: "khiva"
       client: "The Flying Games"
       category: "board-games"
       image: "/assets/images/portfolio/Khiva-3D_Droite-1003x1024.png"
@@ -57,6 +59,7 @@ en:
       
   projects:
     - title: "Mojo"
+      id: "mojo"
       client: "The Flying Games"
       category: "board-games"
       image: "/assets/images/portfolio/Mojo_3DBox_With_Material.png"
@@ -71,6 +74,7 @@ en:
       testimonial: "A smooth collaboration that successfully opened Mojo to the English-speaking market."
       
     - title: "Khiva"
+      id: "khiva"
       client: "The Flying Games"
       category: "board-games"
       image: "/assets/images/portfolio/Khiva-3D_Droite-1003x1024.png"

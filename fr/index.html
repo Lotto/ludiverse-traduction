@@ -73,22 +73,22 @@ lang: fr
     <div class="container">
         <h2 class="section-title">Mes dernières réalisations</h2>
         <div class="portfolio-grid">
-            <div class="portfolio-item">
+            <a href="/fr/portfolio/#mojo" class="portfolio-item">
                 <img src="/assets/images/portfolio/Mojo_3DBox_With_Material.png" alt="Traduction Mojo" class="portfolio-image">
                 <div class="portfolio-overlay">
                     <h4>Mojo</h4>
                     <p>Français → Anglais</p>
                     <small>The Flying Games</small>
                 </div>
-            </div>
-            <div class="portfolio-item">
+            </a>
+            <a href="/fr/portfolio/#khiva" class="portfolio-item">
                 <img src="/assets/images/portfolio/Khiva-3D_Droite-1003x1024.png" alt="Traduction Khiva" class="portfolio-image">
                 <div class="portfolio-overlay">
                     <h4>Khiva</h4>
                     <p>Français → Anglais</p>
                     <small>The Flying Games</small>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="text-center">
             <a href="/fr/portfolio/" class="btn btn-outline-white">Voir mes réalisations</a>
@@ -270,6 +270,10 @@ lang: fr
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 .portfolio-image {
