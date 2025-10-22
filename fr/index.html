@@ -134,9 +134,16 @@ lang: fr
 <!-- CTA Section -->
 <section class="cta">
     <div class="container">
-        <h2>Prêt à traduire votre jeu ?</h2>
-        <p>Contactez-moi pour discuter de votre projet et obtenir un devis personnalisé.</p>
-        <a href="/fr/contact/" class="btn btn-primary">Demander un devis gratuit</a>
+        <div class="cta-content">
+            <div class="cta-image">
+                <img src="/assets/images/SAB_5500.JPG" alt="Adil Et Taher - Traducteur" class="adil-cta-photo">
+            </div>
+            <div class="cta-text">
+                <h2>Prêt à traduire votre jeu ?</h2>
+                <p>Contactez-moi pour discuter de votre projet et obtenir un devis personnalisé.</p>
+                <a href="/fr/contact/" class="btn btn-primary">Demander un devis gratuit</a>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -407,18 +414,44 @@ lang: fr
     background: linear-gradient(135deg, #2951d5, #1a3ab3);
     color: white;
     padding: 4rem 0;
-    text-align: center;
+}
+
+.cta-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cta-text {
+    text-align: left;
 }
 
 .cta h2 {
     color: white;
     margin-bottom: 1rem;
+    font-size: 2.5rem;
 }
 
 .cta p {
     font-size: 1.125rem;
     margin-bottom: 2rem;
     opacity: 0.95;
+}
+
+.cta-image {
+    text-align: center;
+}
+
+.adil-cta-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .text-center {
@@ -429,13 +462,32 @@ lang: fr
     .hero-title {
         font-size: 2rem;
     }
-    
+
     .hero-subtitle {
         font-size: 1rem;
     }
-    
+
     .pricing-card.popular {
         transform: none;
+    }
+
+    .cta-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .cta-text {
+        text-align: center;
+    }
+
+    .cta h2 {
+        font-size: 2rem;
+    }
+
+    .adil-cta-photo {
+        width: 200px;
+        height: 200px;
     }
 }
 </style>
