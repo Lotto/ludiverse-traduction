@@ -9,9 +9,11 @@
                 {% endif %}
                 <a href="{{ home_url | relative_url }}" class="site-logo">
                     <img src="/assets/images/icons/cropped-logo-3-50x50.png" alt="Ludiverse Traduction" class="site-icon">
-                    <h1 class="site-title">Ludiverse Traduction</h1>
+                    <div class="site-text">
+                        <h1 class="site-title">Ludiverse Traduction</h1>
+                        <p class="site-tagline">{{ site.data.translations[current_lang].tagline }}</p>
+                    </div>
                 </a>
-                <p class="site-tagline">{{ site.data.translations[current_lang].tagline }}</p>
             </div>
             
             <nav class="main-navigation">
