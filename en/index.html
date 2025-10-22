@@ -17,6 +17,24 @@ lang: en
     </div>
 </section>
 
+<!-- About Section -->
+<section class="about-preview">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-image">
+                <img src="/assets/images/SAB_5976.jpg" alt="Adil Et Taher - Translator" class="about-photo">
+            </div>
+            <div class="about-text">
+                <h2>Adil ET TAHER</h2>
+                <p class="about-subtitle">Passionate Board Game Translator</p>
+                <p class="about-description">Independent translator and English teacher with 20 years of experience, I put my expertise and passion at the service of your games. Passionate about board games and language studies, I help publishers and creators break down linguistic and cultural barriers.</p>
+                <p class="about-highlight">I capture the essence and atmosphere of the game so that each player can enjoy it to the fullest in their native language, without losing any nuance.</p>
+                <a href="/en/about/" class="btn btn-outline">Learn more about me</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Services Section -->
 <section class="services">
     <div class="container">
@@ -102,13 +120,17 @@ lang: en
         <h2 class="section-title">They Trusted Me</h2>
         <div class="testimonials-grid">
             <div class="testimonial-card featured-testimonial">
-                <div class="testimonial-avatar">
-                    <img src="/assets/images/testimonials/david-perez-150x150.jpeg" alt="David Perez" class="avatar-img">
-                </div>
-                <p class="testimonial-text">"I started working with Ludiverse for the translation of our games more than a year ago. Since then, the collaboration has been smooth and very constructive. Adil listens to his clients and doesn't hesitate to bring his experience as a player, whether it concerns translation but also the entire set of rules. A real added value provided by a true professional whom I recommend, without restriction."</p>
-                <div class="testimonial-author">
-                    <strong>David Perez</strong>
-                    <span>The Flying Games</span>
+                <div class="testimonial-content">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="/assets/images/testimonials/david-perez-150x150.jpeg" alt="David Perez" class="avatar-img">
+                        </div>
+                        <div class="testimonial-author">
+                            <strong>David Perez</strong>
+                            <span>The Flying Games</span>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"I started working with Ludiverse for the translation of our games more than a year ago. Since then, the collaboration has been smooth and very constructive. Adil listens to his clients and doesn't hesitate to bring his experience as a player, whether it concerns translation but also the entire set of rules. A real added value provided by a true professional whom I recommend, without restriction."</p>
                 </div>
             </div>
         </div>
@@ -156,6 +178,62 @@ lang: en
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.about-preview {
+    padding: 4rem 0;
+    background: white;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-image {
+    text-align: center;
+}
+
+.about-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #2951d5;
+    box-shadow: 0 8px 32px rgba(41, 81, 213, 0.2);
+}
+
+.about-text h2 {
+    color: #2951d5;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.about-subtitle {
+    color: #666;
+    font-size: 1.125rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.about-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.about-highlight {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #2951d5;
+    font-weight: 500;
+    font-style: italic;
 }
 
 .services {
@@ -360,16 +438,40 @@ lang: en
     text-align: center;
 }
 
-.testimonial-avatar {
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
     margin-bottom: 1.5rem;
 }
 
+.testimonial-avatar {
+    flex-shrink: 0;
+}
+
 .avatar-img {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #2951d5;
+    border: 3px solid #2951d5;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-author strong {
+    font-size: 1.125rem;
+    color: #2951d5;
+    margin-bottom: 0.25rem;
+}
+
+.testimonial-author span {
+    color: #666;
+    font-size: 0.9rem;
 }
 
 
@@ -451,6 +553,21 @@ lang: en
     .adil-cta-photo {
         width: 200px;
         height: 200px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .about-photo {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-text h2 {
+        font-size: 1.75rem;
     }
 }
 </style>
