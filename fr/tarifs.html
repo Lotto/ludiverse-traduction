@@ -32,8 +32,49 @@ permalink: /fr/tarifs/
             <div class="plan-features">
                 <h4>Ce qui est inclus :</h4>
                 <ul>
+                    {% assign in_dtp_section = false %}
+                    {% assign in_services_section = false %}
+                    {% assign in_dtp_included_section = false %}
+                    {% assign in_review_section = false %}
                     {% for feature in plan.features %}
+                    {% if feature contains '❌' %}
+                    <li class="not-included">{{ feature }}</li>
+                    {% elsif feature contains '📋' and feature contains 'en option' %}
+                    <li class="section-header">{{ feature }}</li>
+                    {% assign in_dtp_section = true %}
+                    {% assign in_services_section = false %}
+                    {% assign in_dtp_included_section = false %}
+                    {% elsif feature contains '📋' and feature contains 'incluse' %}
+                    <li class="section-header">{{ feature }}</li>
+                    {% assign in_dtp_included_section = true %}
+                    {% assign in_services_section = false %}
+                    {% assign in_dtp_section = false %}
+                    {% elsif feature contains '🔍' %}
+                    <li class="section-header">{{ feature }}</li>
+                    {% assign in_review_section = true %}
+                    {% assign in_dtp_section = false %}
+                    {% assign in_dtp_included_section = false %}
+                    {% assign in_services_section = false %}
+                    {% assign reset_sections = false %}
+                    {% elsif feature contains '🎯' %}
+                    <li class="section-header">{{ feature }}</li>
+                    {% assign in_services_section = true %}
+                    {% assign in_dtp_section = false %}
+                    {% assign in_dtp_included_section = false %}
+                    {% assign in_review_section = false %}
+                    {% elsif in_dtp_section == true %}
+                    <li class="section-item">{{ feature }}</li>
+                    {% elsif in_dtp_included_section == true and (feature contains '📋' or feature contains '🎯') %}
+                    <li class="section-header">{{ feature }}</li>
+                    {% elsif in_dtp_included_section == true %}
                     <li>{{ feature }}</li>
+                    {% elsif in_review_section == true %}
+                    <li>{{ feature }}</li>
+                    {% elsif in_services_section == true %}
+                    <li>{{ feature }}</li>
+                    {% else %}
+                    <li>{{ feature }}</li>
+                    {% endif %}
                     {% endfor %}
                 </ul>
             </div>
@@ -54,66 +95,38 @@ permalink: /fr/tarifs/
             <table class="comparison-table">
                 <thead>
                     <tr>
-                        <th>Service</th>
-                        <th>Classique</th>
-                        <th>Premium</th>
-                        <th>Ultimate</th>
+                        <th>Formule</th>
+                        <th>Traduction</th>
+                        <th>Relectures</th>
+                        <th>Mise en page</th>
+                        <th>Revisions</th>
+                        <th>Support</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Traduction professionnelle</td>
-                        <td class="included">✓</td>
-                        <td class="included">✓</td>
-                        <td class="included">✓</td>
+                        <td>🔵 Classique</td>
+                        <td>Traduction + relecture professionnelle</td>
+                        <td>1</td>
+                        <td>Non incluse</td>
+                        <td>-</td>
+                        <td>48h</td>
                     </tr>
                     <tr>
-                        <td>Relecture native</td>
-                        <td class="included">1 relecture</td>
-                        <td class="included">2 relectures</td>
-                        <td class="included">3 relectures</td>
+                        <td>🟠 Premium</td>
+                        <td>Traduction + relecture linguistique + relecture ludique</td>
+                        <td>2</td>
+                        <td>Option</td>
+                        <td>30 jours</td>
+                        <td>24h</td>
                     </tr>
                     <tr>
-                        <td>Délai de livraison</td>
-                        <td class="included">7 jours</td>
-                        <td class="included">5 jours</td>
-                        <td class="included">3 jours</td>
-                    </tr>
-                    <tr>
-                        <td>Formats acceptés</td>
-                        <td class="limited">Word, PDF</td>
-                        <td class="included">Tous formats</td>
-                        <td class="included">Tous + mise en page</td>
-                    </tr>
-                    <tr>
-                        <td>Révisions</td>
-                        <td class="limited">3 révisions</td>
-                        <td class="included">Illimitées (30j)</td>
-                        <td class="included">Illimitées (60j)</td>
-                    </tr>
-                    <tr>
-                        <td>Support</td>
-                        <td class="included">Email</td>
-                        <td class="included">Prioritaire</td>
-                        <td class="included">VIP 24/7</td>
-                    </tr>
-                    <tr>
-                        <td>Glossaire personnalisé</td>
-                        <td class="not-included">-</td>
-                        <td class="included">✓</td>
-                        <td class="included">✓ + guide de style</td>
-                    </tr>
-                    <tr>
-                        <td>Consultation stratégique</td>
-                        <td class="not-included">-</td>
-                        <td class="not-included">-</td>
-                        <td class="included">✓</td>
-                    </tr>
-                    <tr>
-                        <td>Tests de jeu</td>
-                        <td class="not-included">-</td>
-                        <td class="not-included">-</td>
-                        <td class="included">✓ avec feedback</td>
+                        <td>🔴 Ultimate</td>
+                        <td>Traduction experte + triple relecture</td>
+                        <td>3</td>
+                        <td>Incluse</td>
+                        <td>60 jours</td>
+                        <td>12h</td>
                     </tr>
                 </tbody>
             </table>
@@ -283,6 +296,39 @@ permalink: /fr/tarifs/
     position: absolute;
     left: 0;
     top: 0.75rem;
+}
+
+.plan-features li.not-included:before {
+    content: "";
+}
+
+.plan-features li.not-included {
+    padding-left: 0;
+    color: #666;
+    font-weight: normal;
+}
+
+.plan-features li.section-header:before {
+    content: "";
+}
+
+.plan-features li.section-header {
+    padding-left: 0;
+    font-weight: 600;
+    color: #2951d5;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-bottom: none;
+}
+
+.plan-features li.section-item:before {
+    content: "";
+}
+
+.plan-features li.section-item {
+    padding-left: 1rem;
+    color: #666;
+    font-size: 0.9rem;
 }
 
 .plan-action {
